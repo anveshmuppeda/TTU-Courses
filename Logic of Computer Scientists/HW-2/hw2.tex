@@ -1,0 +1,173 @@
+
+\documentclass[12pt, letterpaper]{article}
+
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{pictex}
+\def \color#1]#2{}
+\usepackage{palatino, url, multicol} % for multiple columns
+
+\setlength{\topmargin}{-1.75cm} \setlength{\textheight}{22.5cm}
+\setlength{\oddsidemargin}{0.25cm}
+\setlength{\evensidemargin}{0.25cm} \setlength{\textwidth}{16.2cm}
+
+\begin{document}
+
+\newcommand{\ee}[1] {
+  \begin{enumerate}
+    #1
+  \end{enumerate}
+}
+\newcommand{\ie}[1] {
+  \begin{itemize}
+    #1
+  \end{itemize}
+}
+
+\newcommand{\hide}[1]{}
+\newcommand{\set}[1]{\{#1\}}
+\newtheorem{definition}{Definition}
+
+\newcommand{\duedate}{
+    11:59pm Thur Sept 29.
+}
+
+%% \noindent test \hfill test
+
+\title{{\bf Homework 2}. Propositional Logic. Tableau Proof.}
+\date{}
+\maketitle
+
+\thispagestyle{myheadings} \markright{CS5384 Logic for Computer
+Scientists by Y Zhang, TTU, Fall 2020}
+
+\noindent Submit your home work to blackboard by {\bf \duedate}. % You need to start this homework now. You are required to study L3 (on blackboard).
+
+\ee{
+ \item (6) (Attendance and grading issues). Divya Mannava and Vamsi Krishna Pagadala are our graders. 
+ \ie{
+   \item  If you have any issues/requests about attendance, please contact Vamsi directly and he will take notes and answer your questions. His email is:
+	\begin{center} {\em   
+	vpagadal@ttu.edu
+	}
+	\end{center}  
+   \item  If you have any issues/requests about grading, please write to either Divya or Vamsi whose emails are {\em dmannava@ttu.edu} and {\em vpagadal@ttu.edu}
+   respectively. 
+ I do work out a rubric with Divya and Vamsi for grading each homework, and we go through a sample set of submissions together on how to grade.  Whom do you need to contact if you cannot attend a class or have an attendance issue? What email do you use for that contact?  
+Whom do you contact if you have doubts on the grading of your homework? What email do you use for that contact? 
+}
+ 
+\item (14) Study the proof of $\Sigma \subseteq Cn(\Sigma)$ in Section 2.3 of L04 and the note after the proof to learn how to work backwards step by step. A key in the one-step backwards is the application of the definition of a concept to a use of the concept. 
+
+\ee{
+ \item Based on the working backwards method, write a final proof for the following statement: for any proposition $\alpha$, $\alpha$ is a consequence of $\{\alpha\}$. 
+
+  \item Let $\Sigma_1$ and $\Sigma_2$ be sets of propositions. Using the working backwards method, prove $\Sigma_1 \subseteq \Sigma_2$ implies $Cn(\Sigma_1) \subseteq Cn(\Sigma_2)$. }
+
+Remember to write the reason for each statement in your proof. Your proof should be in the final form. 
+
+
+\item (10) Find the definition of a {\em model of a set of propositions}  and definition of {\em a proposition is a consequence of a set of propositions} from the textbook. Rewrite each of the definitions using the concept of {\em a valuation makes a proposition true} (Definition 3.2) where appropriate. In your new definition, you are NOT allowed to directly apply a valuation $\mathcal{V}$ to a proposition $\sigma$ in the form $\mathcal{V}(\sigma)$. You are NOT allowed to use $T$ directly in your definitions. 
+
+
+
+
+\item (15) Give a tableau proof of  $((\alpha \rightarrow \beta) \leftrightarrow (\neg \alpha \vee
+\beta))$.
+
+% \item ayx
+
+\item (10) Which entries of the tableaux in Figure~\ref{tab3} are {\em reduced}? Which
+are not?
+
+\begin{figure}[htb]
+\begin{center}
+\input{hw2-reduced.pictex}
+\end{center}
+\caption{A tableau} 
+\label{tab3}
+\end{figure}
+
+
+\item (15) Draw the CST of $T((A \lor B) \land (C \lor D))$.
+
+\item  (10) (Write definition)  
+%In addition to the alphabet (propositional letters and logical connectives) of the propositional
+% logic, assume we allow a new connective  {\tt majority($\alpha_1, \alpha_2, \alpha_3$)}. 
+Recall the {\em language} of propositional logic in L02. We now expand it with a new connective {\em majority}. While most of the original connectives in the language such as $\land$ are used in an {\em infix form} to form a proposition. For example, if $\alpha$ and $\beta$ are propositions, then $(\alpha \land \beta)$ is a proposition. With the expanded language, we can write new propositions.  For the new connective {\em majority}, it allows exactly three parameters, and  a prefix form has to be used for it to form a new proposition. For example, for propositional letters $A_1,   A_2,  A_3$, 
+ {\em majority($A_1,   A_2,  A_3$)}  is a proposition. In fact, we can nest these connectives. For example, 
+ {\em majority(majority($A_1, A_2, A_3$), $(A_1
+\land A_2), (A_3 \lor B)$)} is a new  {\em propositions}, and so is 
+{\em (majority($A_1,   A_2,  A_3) \land A_1)$} 
+
+Write a definition of the new {\em proposition}. You can refer to the definition of original proposition from the book/L02. Clearly, an inductive (recursive) definition is needed here. 
+
+\item (10) Study carefully the proofs in L06. Prove the completeness result of the tableaux proof, i.e., Theorem 5.3. Follow the proof of soundness result in L06. Do not skip steps in your proof. 
+Your proof should be in the final form (e.g., all labels for statements will be without prefix b or F). You may use lemma 5.4 directly.
+%  (don't prove lemma 5.4). 
+
+\item (10) Study carefully the proofs  in L06. Prove lemma 5.2. You have to follow the methods we studied in L06. 
+}
+
+{\bf Appendix.} A proof (see latex source for the latex code for this proof). 
+
+\medskip 
+\noindent {\em Proof.} In this proof, the {\em number of
+connectives} of an entry of a path in a tableau, is defined as the
+number of connectives of the proposition of this entry.
+
+We prove this claim by induction on the number of connectives of the
+entries on $P$.
+  \ie{
+    \item Base case (the entries with 0 connectives). We will prove
+    $\mathcal{V}$ agrees with all entries, with 0 connectives, of
+    $P$. \vspace*{-1cm}
+    \begin{tabbing}
+    abc\=def\=abc\=def\=abc\=def\=abc \kill \\
+    For every such entry $E$, with 0 connectives, of $P$, \\
+    \> since it has 0 connectives, it must be of the form $TA$ or $FA$. \\
+    \> Case 1. $E=TA$. By the definition of \\
+    \> \> $\mathcal{A}$, $\mathcal{V}(A)=T$ and thus \\
+    \> \> $\mathcal{V}$ agrees with $E$. \\
+    \> Case 2. $E=FA$. By the definition of $\mathcal{A}$, \\
+    \> \> $\mathcal{V}(A)=F$, hence, \\
+    \> \> $\mathcal{V}$ agrees with $E$. \\
+    \> Therefore, $\mathcal{V}$ agrees with $E$, by case 1 and 2. \\
+    $\mathcal{V}$ agrees with $E$.
+    \end{tabbing}
+    \item Inductive hypothesis (IH) (on number of connectives not more than $n$). We
+    {\em assume} $\mathcal{V}$ agrees with all entries, {\em with at most $n$ ($n \ge 0$) connectives}, of
+    $P$.
+    \item Prove the case of entries with $n+1$ connectives, i.e.,
+    $\mathcal{V}$ agrees with all entries, {\em with $n+1$
+    connectives}, of $P$. \vspace*{-1.0cm}
+    \begin{tabbing}
+    abc\=def\=abc\=def\=abc\=def\=abc \kill \\
+    For every such entry $E$, with $n+1$ connectives, of $P$,\\
+    \> since it has $n+1$ connectives, it must be of one of the forms: \\
+    \> \> $T(\alpha_1 \lor \alpha_2), T(\alpha_1 \land \alpha_2), T(\alpha_1 \rightarrow \alpha_2), T(\alpha_1 \leftrightarrow \alpha_2), T(\neg \alpha_1),$ \\
+    \> \> $F(\alpha_1 \lor \alpha_2), F(\alpha_1 \land \alpha_2), F(\alpha_1 \rightarrow \alpha_2), F(\alpha_1 \leftrightarrow \alpha_2)$, or $F(\neg \alpha_1)$ \\
+    \> \> where $\alpha_1$ (and $\alpha_2$ respectively) has {\em at
+    most $n$} connectives. \\
+    \> We prove by cases. \\
+    \> Case 1. $E=T(\alpha_1 \lor \alpha_2)$. \\
+    \> \> Since $\tau$ is finished, $P$ is finished and thus $E$ is reduced. \\
+    \> \> By definition of {\em reduced}, $T(\alpha_1)$ or $T(\alpha_2)$ must occur on $P$. \\
+    \> \> Case 1.1 $T(\alpha_1)$ occurs on $P$. By IH, $\mathcal{V}$ agrees with $T(\alpha_1)$, \\
+    \> \> \> and thus $\mathcal{V}(\alpha_1)=T$. Therefore, \\
+    \> \> \> $\mathcal{V}(\alpha_1 \lor \alpha_2)=T$, hence, \\
+    \> \> \> $\mathcal{V}$ agrees with $E$. \\
+    \> \> Case 1.2 $T(\alpha_2)$ occurs on $P$. \\
+    \> \> \> We can prove, similarly to case 1.1, that \\
+    \> \> \> $\mathcal{V}$ agrees with $E$. \\
+    \> \> $\mathcal{V}$ agrees with $E$, by cases 1.1 to 1.2. \\
+    \> Case 2 to 10. We can prove similarly, \\
+    \> \> $\mathcal{V}$ agrees with $E$. \\
+    \> Therefore, $\mathcal{V}$ agrees with $E$, by cases 1 to 10. \\
+    $\mathcal{V}$ agrees with $E$.
+    \end{tabbing}
+  }
+
+\noindent QED
+
+\end{document}

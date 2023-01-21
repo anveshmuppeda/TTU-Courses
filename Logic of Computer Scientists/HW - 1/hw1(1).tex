@@ -1,0 +1,94 @@
+
+\documentclass[12pt, letterpaper]{article}
+
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\usepackage{palatino, url, multicol} % for multiple columns
+
+\setlength{\topmargin}{-1.75cm} \setlength{\textheight}{22.5cm}
+\setlength{\oddsidemargin}{0.25cm}
+\setlength{\evensidemargin}{0.25cm} \setlength{\textwidth}{16.2cm}
+
+\newcommand{\duedate}{
+      11:59pm Sun Sept 11.}
+
+
+\begin{document}
+
+\newcommand{\ie}[1] {
+  \begin{itemize}
+    #1
+  \end{itemize}
+}
+
+\newcommand{\hide}[1]{}
+\newcommand{\set}[1]{\{#1\}}
+\newtheorem{definition}{Definition}
+
+%% \noindent test \hfill test
+
+\title{{\bf Homework 1}. Basics on definitions, proofs and propositional logic}
+\date{}
+\maketitle
+
+\input{hwHeader}
+
+Submit your home work to blackboard by {\bf \duedate}
+Use latex to typeset your answers to the questions (use overleaf.com to edit your latex file and get its pdf file). Please submit both your latex file and PDF file. I also attach the latex file (hw1.tex) of this homework.  Here is a link to a sample Latex file on overleaf https://www.overleaf.com/read/czwmmdvqzpcj which is read only. You need to create an overleaf account, if not done yet, and then create a new project and then copy the content of the main.tex (left most pane) file in the link  and paste it to the main file of your project. For the picture file in the link, click the 3 dots to the right of the file name, then click download (to your local computer), and then upload to your project. Now you can play with the latex file. Note hw1.tex (and hwHeader.tex) is also available on blackboard. In your overleaf project for hw1, you upload both of them (and delete the default main.tex file). Your ``current" file should always be hw1.tex when you click the ``recompile'' button.  
+
+\begin{enumerate}
+
+\item (10 points) Everyone is required to sign this form: \\
+ https://forms.gle/KNBL5EbBqNc5V2T37 
+
+\item (10)  1) Which of the following strings are official
+propositions (according to our definition of propositions).
+
+(a) $((\neg (A \vee B)) \wedge C)$\\
+(b) $(A \wedge B) \vee C$ \\
+(c) $(A \wedge (B \wedge C)))$ 
+
+2) Draw the formation tree of $((\neg C) \leftrightarrow (A \vee C))$.
+
+\item (20) Following our proof methodology prove
+\begin{center}
+  $((A \rightarrow B) \leftrightarrow C)$ is a proposition.
+% \item If $\Sigma_1 \subseteq \Sigma_2$, then $\mathcal{M}(\Sigma_2) \subseteq \mathcal{M}(\Sigma_1)$.
+\end{center}
+Goals for this questions:
+\ie{
+  \item Understand well the working backward proof method. Write steps for working backward on a scratch paper. During working backward, also practice  application of definitions and decomposition of the current statement to prove  into the ``main concept'' or logical connective and the rest (similar to the formation tree of a proposition).  
+  \item From your working backward steps, write the proof steps in a ``forward" way. See the format of the ``Final proof" in L3-ProofExamples.pdf available on blackboard. 
+}
+
+\item (10) Although we follow the content in the book, but our class covers much more (e.g., identifying concepts and their parameters, precise definitions and etc.) than what is printed on the textbook. Also the materials in this class are so special that one unlikely can answer the questions in homework or tests without understanding what is discussed during class  and studying the notes and textbook. After you complete this homework, do you strongly agree, agree, keep neutral, disagree or strongly disagree with the statements above? Explain why you answer so. 
+
+\item (50)  (Read and write definitions)
+\begin{itemize} 
+\item The definition of ``Definition 3.2" is not as explicit and complete as we would like. Write a precise and complete  definition. (Recall the discussion of how to define valuation during class. Also recall the definition of propositions to master the definition methods there.)
+\item  Write  the precise definition of the notation $a_i$ (two lines below Figure 6 in Page 19 of the text book) 
+% for the $i^{th}$ row 
+in the proof for Theorem 2.8 (also see appendix). 
+For any notations in your definition, 
+find its meaning in the proof and write its precise definition here. Repeat this process until all notations are defined in this proof or outside the proof (e.g., you don't need to define $\land$). 
+% By definition $D$, what is $a_{i_1}$?  
+\item Write the following information for each of the concepts: the $a_i$ above, and support in ``Definition 2.5 (ii)'' in the text book.
+\begin{itemize}
+  \item The name of the concept: 
+  \item The parameter(s) of the concept: 
+  \item Meta variables in the definition of the concept:
+  \item The concepts used in the definition (and defined before) (including names and their parameters): 
+\end{itemize} 
+\end{itemize}
+\end{enumerate}
+
+\vspace{0.5cm}
+\newpage
+\noindent {\Large \bf Appendix}
+
+\begin{center}
+	\includegraphics[scale=0.6]{hw1-TH2-8.png}
+\end{center}
+
+\end{document}

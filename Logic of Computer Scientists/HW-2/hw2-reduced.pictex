@@ -1,0 +1,75 @@
+%Title: /tmp/xfig-fig.PUUdvo
+%%Created by: fig2dev Version 3.2 Patchlevel 4
+%%CreationDate: Wed Dec 31 18:00:00 1969
+%%User: yzhang@mangosteen.cs.ttu.edu (Yuanlin Zhang)
+\font\thinlinefont=cmr5
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\mbox{\beginpicture
+\setcoordinatesystem units <1.00000cm,1.00000cm>
+\unitlength=1.00000cm
+\linethickness=1pt
+\setplotsymbol ({\makebox(0,0)[l]{\tencirc\symbol{'160}}})
+\setshadesymbol ({\thinlinefont .})
+\setlinear
+%
+% Fig POLYLINE object
+%
+\linethickness= 0.500pt
+\setplotsymbol ({\thinlinefont .})
+{\color[rgb]{0,0,0}\putrule from  5.715 25.082 to  5.715 24.448
+}%
+%
+% Fig POLYLINE object
+%
+\linethickness= 0.500pt
+\setplotsymbol ({\thinlinefont .})
+{\color[rgb]{0,0,0}\putrule from  5.715 23.812 to  5.715 23.178
+}%
+%
+% Fig POLYLINE object
+%
+\linethickness= 0.500pt
+\setplotsymbol ({\thinlinefont .})
+{\color[rgb]{0,0,0}\putrule from  5.715 21.590 to  5.715 20.796
+}%
+%
+% Fig POLYLINE object
+%
+\linethickness= 0.500pt
+\setplotsymbol ({\thinlinefont .})
+{\color[rgb]{0,0,0}\putrule from  5.715 22.701 to  5.715 21.907
+}%
+%
+% Fig TEXT object
+%
+\put{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}T((A $\lor$ B) $\land$ (A $\land$ B))}%
+} [lB] at  4.445 25.241
+%
+% Fig TEXT object
+%
+\put{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}T(A $\lor$ B)}%
+} [lB] at  5.080 23.971
+%
+% Fig TEXT object
+%
+\put{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}T(A $\land$ B)}%
+} [lB] at  5.080 22.860
+%
+% Fig TEXT object
+%
+\put{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}TA}%
+} [lB] at  5.556 21.590
+%
+% Fig TEXT object
+%
+\put{\SetFigFont{12}{14.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}TB}%
+} [lB] at  5.556 20.479
+\linethickness=0pt
+\putrectangle corners at  4.445 25.571 and  6.077 20.479
+\endpicture}

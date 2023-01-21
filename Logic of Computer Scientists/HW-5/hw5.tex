@@ -1,0 +1,154 @@
+
+
+\documentclass[12pt, letterpaper]{article}
+
+\setlength{\topmargin}{-1.75cm} \setlength{\textheight}{22.5cm}
+\setlength{\oddsidemargin}{0.25cm}
+\setlength{\evensidemargin}{0.25cm} \setlength{\textwidth}{16.2cm}
+
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\usepackage{palatino, url, multicol} % for multiple columns
+
+\usepackage{pictex}
+%% in the .pictex output of xfig, there is command \colo
+%% however the old version of pictex may not define this
+%% so we define color here as empty
+\def \color#1]#2{}
+
+\newcommand{\hwnumber} {
+    5
+}
+
+\newcommand{\hwtitle} {
+   Predicate Logic: Syntax and Semantics
+}
+
+\newcommand{\duedate}{
+    11:59pm Sun Nov 20}
+\date{}
+\begin{document}
+
+\newcommand{\hide}[1]{}
+\newcommand{\otherquestions}[1]{}
+\newcommand{\set}[1]{\{#1\}}
+\newcommand{\pg}[1]{{\tt #1}}
+\newtheorem{definition}{Definition}
+\newcommand{\emptyclause}{\Box}
+
+
+%% \noindent test \hfill test
+
+
+\title{{\bf Homework \hwnumber.} \hwtitle}
+
+\date{}
+\maketitle
+
+\input{hwHeader.tex}
+
+\noindent 
+Submit your solution in PDF file (and Latex source  file if you use Latex) to blackboard by 
+{\bf \duedate}. 
+
+\begin{enumerate}
+\item Consider the following sentence.
+
+{\em Every number greater than or equal to 4 can be written
+        as the sum of two prime numbers.}
+
+  \begin{enumerate}
+    \item Write {\em a language} (as defined in Def 2.1) such that
+    some formulas of the language can be used to represent the sentence above.
+
+    \item Write a formula of your language that should reflect the
+    meaning of the sentence above.
+
+    \item In terms of your language, write three example terms, three example atomic
+    formulas, and three example formulas.
+  \end{enumerate}
+
+\item Write a formula to represent the following information. Your formula should be as close as possible
+to the intended meaning of these sentences.
+
+\begin{enumerate}
+\item {\em There is a mother to all children.}
+
+% from Unit Lo Logic http://cr.yp.to/2005-261/bender1/Lo.pdf
+\item ALL ITEMS NOT AVAILABLE AT ALL STORES.
+
+Note, the sentence above is a disclaimer in the weekly flyer of
+specials of a grocery store chain.
+\end{enumerate}
+
+\item Given the language defined in Def 2.1, which of the following
+are formulas defined by Def 2.5?
+
+  \begin{enumerate}
+    \item $f(x,c)$
+    \item $R(c, f(d,z))$
+    \item $\forall x (P(x))$
+    \item $((\exists x)(((\forall y)P(z)) \rightarrow R(x,y)))$
+  \end{enumerate}
+\item Given
+
+$$((\exists x)(((\forall y)P(z)) \rightarrow R(x,y))),$$
+  \begin{enumerate}
+    \item List all its subformulas.
+    \item Draw its formation tree.
+  \end{enumerate}
+
+\item Which of the following terms are substitutable for $x$ in the
+corresponding formulas?
+  \begin{enumerate}
+    \item $f(z,y)$ in $((\exists y)(P(y) \land R(x,z))).$
+    \item $g(f(z,y),a)$ in $((\exists x)(P(x) \land R(x,y))).$
+  \end{enumerate}
+
+\item Connect predicate calculus to the study of this course. To focus on the substance, we need to extend (informally) predicate calculus (syntax) as follows  
+  \begin{itemize} 
+     \item You can use sets or proposition as a parameter of a predicate. 
+     \item You can use $=$ as a predicate symbol in the normal way. For example, that two terms $t_1$ and $t_2$ are equal can be represented by $t_1 = t_2$. 
+     \item You can use a variable to refer to a function or a set or a proposition. (e.g., $((\exists \mathcal{V}) \mathcal{V}(x) = T)$ where $T$ is constant.)
+  \end{itemize}	
+  The form of formula will be expanded accordingly to the extension above. 
+  Consider the definition of {\em consequence} (Def 3.7 of Part I).  
+  \begin{enumerate}
+  	\item Represent it as a formula. You need to introduce all predicates you need in the formula,  in the way we did in L11.1 for the subset example. Intuitively, a concept name and its parameters/arguments you identify in the definition is a good candidate of a predicate. You also need to introduce any constant or function symbol you need.  Note the main ``if" in a definition should be understood as ``if and only if." 
+  	Note statement ``$\forall x \in A, x \in B$" in the subset definition. We translate it to ``$((\forall x)(x \in A \rightarrow x \in B))$."
+  	\item Let your formula be $\alpha$. What can you logically derive (some intuition/experience from your earlier study is needed here) from the formula ($\alpha \land$ ``B is a consequence of $\{A, A \rightarrow B\}$")? Note you should translate the English in the formula using predicate(s) you introduced. Your answer to this question has to be in the form of a formula. You need to do a variable substitution ($\Sigma$ in English definition would be replaced by $\{A, A \rightarrow B\}$, and $\sigma$ by $B$). 
+  \end{enumerate} 
+\item 
+1) Let $A = \{1, 2\}$. a) List all functions from $A$ to $A$ in the form of sets of pair. For example, one function is $\{(1,1), (2,2)\}$. If we let the function be named $g$. Then in the example function, $g(1)$ is 1 and $g(2)$ is 2.  b) List all unary relations on $A$. Your relations must be represented as sets.
+
+2) Show that $\forall x (p(x) \rightarrow q(f(x))) \wedge \forall x
+p(x) \wedge \exists x \neg q(x)$ is satisfiable. The format of your structure should follow the one in L12.1. In your structure, you must use the domain 
+$A = \{1, 2\}$. You must represent the function assigned to $f$ in the set of pairs. You must represent the relations assigned to $p$ and $q$ in the set forms.  Note you have to figure out the constants in the language on which the formula is defined. 
+
+\item Prove that $\mathcal{A} \models \neg \exists x
+\varphi(x)$ if and only if $\mathcal{A} \models \forall x \neg \varphi(x)$.  
+You have to follow the proof format we used earlier. Working backward again is a good idea. You have to be able to apply the definitions. 
+
+\otherquestions{
+  \item Consider the following definition.
+
+  \begin{definition}
+    A set $A$ is a subset of  a set $B$ if for all $x$ of $A$, $x
+    \in B$.
+  \end{definition}
+    \begin{enumerate}
+      \item Write {\em a language} such that some formulas of the
+  language can be used to describe the definition above.
+
+      \item Write a formula to represent the definition above.
+      \item Assume you expand your language with function symbol $\times$.
+      What's the result of the substitution $A/A\timesB$ of your
+      formula in (b).
+    \end{enumerate}
+  \item Using Theorem 2.14 to prove that the number of right and left parentheses are equal in every formula.
+}
+
+\end{enumerate}
+
+\end{document}

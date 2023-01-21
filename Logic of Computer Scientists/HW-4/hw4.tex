@@ -1,0 +1,87 @@
+
+
+\documentclass[12pt, letterpaper]{article}
+
+\setlength{\topmargin}{-1.75cm} \setlength{\textheight}{22.5cm}
+\setlength{\oddsidemargin}{0.25cm}
+\setlength{\evensidemargin}{0.25cm} \setlength{\textwidth}{16.2cm}
+
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+\usepackage{pictex}
+%% in the .pictex output of xfig, there is command \colo
+%% however the old version of pictex may not define this
+%% so we define color here as empty
+\def \color#1]#2{}
+
+\date{}
+\newcommand{\duedate}{
+  11:59pm Oct 31}
+
+
+\begin{document}
+
+\newcommand{\hide}[1]{}
+\newcommand{\set}[1]{\{#1\}}
+\newcommand{\pg}[1]{{\tt #1}}
+\newtheorem{definition}{Definition}
+\newcommand{\emptyclause}{\Box}
+
+
+%% \noindent test \hfill test
+
+\title{{\bf Homework 4}. Resolution. Resolution Refutation.}
+
+\date{}
+\maketitle
+
+\input{hwHeader.tex}
+
+\noindent 
+ Submit your solution in PDF file (and Latex source  file if you use Latex) to blackboard by 
+ {\bf \duedate}. 
+% Homework will be still accepted until 11:59am Nov 5 without penalty. 
+
+\begin{enumerate}
+% \item Acknowledge you submit ONLY ONE file and it is in PDF format. 
+
+\item State the soundness and completeness results about 
+resolution, $T$-resolution, $\mathcal{A}$-resolution, SLD-resolution. 
+(Make sure what ``formula" your result is talking about.)
+
+
+\item Let $S = \set{\set{A, \neg B, C}, \set{B, C}, \set{\neg A, C}, \set{B, \neg
+C}, \set{\neg B}}.$ What is $S^{B}$? What is $S^{\neg B}$?  
+
+\item Follow our proof methods, prove the following. 
+% You can discuss with other people on the proof, but don't COPY other's writing. 
+%By constructing the proof yourself, you'll learn the most. 
+
+{\em If $P$ is a PROLOG program and $G = \{\neg q_1, \ldots, \neg q_n\}$ a goal clause, then every $q_i$ ($i \in 1..n$) is a consequence 
+of $P$ if and only if $P \cup \{G\}$ is unsatisfiable.}
+
+You may use the following definition of consequence in your proof: 
+a literal $l$ is a {\em consequence of a formula} $S$ if for every 
+assignment $\mathcal{A}$ that satisfies $S$,  $\mathcal{A}$ satisfies $l$, i.e., $l \in \mathcal{A}$. 
+
+%{\em A formula $S$ is satisfiable if and only if either $S^l$ or $S^{\bar{l}}$ is satisfiable.} 
+
+% \item Using the result above, prove: 
+
+% {\em $S$ is unsatisfiable iff both $S^l$ and $S^{\bar{l}}$ are.}
+
+\item Consider a PROLOG program $P$ and a conjunction of propositional letters $p_1, ..., p_n$. To prove that
+$p_1, ..., p_n$ is a consequence of $P$, what is the set of clauses that the resolution refutations (discussed in class) are based on?  Explain why these  methods works. 
+
+\item Consider a PROLOG program $P$: 
+
+$\set{\pg{p :- s, t. ~~~ p :- q. ~~~ q. ~~~ q :- r. ~~~ r. ~~~ r :- w. ~~~ r. ~~~s. ~~~ t :- w.}}$
+
+1) Draw an SLD-tree for goal $\pg{\neg p}$ in terms of $P$. 
+
+2) What is an SLD resolution refutation of $P \cup \set{\set{\pg{\neg
+p}}}$? 
+\end{enumerate}
+
+\end{document}

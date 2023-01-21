@@ -1,0 +1,104 @@
+\documentclass[12pt, letterpaper]{article}
+
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{pictex}
+\def \color#1]#2{}
+\usepackage{palatino, url, multicol} % for multiple columns
+
+\setlength{\topmargin}{-1.75cm} \setlength{\textheight}{22.5cm}
+\setlength{\oddsidemargin}{0.25cm}
+\setlength{\evensidemargin}{0.25cm} \setlength{\textwidth}{16.2cm}
+
+\begin{document}
+
+\newcommand{\ee}[1] {
+  \begin{enumerate}
+    #1
+  \end{enumerate}
+}
+\newcommand{\ie}[1] {
+  \begin{itemize}
+    #1
+  \end{itemize}
+}
+
+\newcommand{\hide}[1]{}
+\newcommand{\set}[1]{\{#1\}}
+\newcommand{\pg}[1]{{\tt #1}}
+\newtheorem{definition}{Definition}
+
+\newcommand{\emptyclause}{\Box}
+\newcommand{\duedate}{
+  05:00pm Mon, Oct 10}
+
+
+%% \noindent test \hfill test
+
+\title{{\bf Homework 3}. Tableau Proof. Resolution.}
+\date{}
+\maketitle
+
+\input{hwHeader.tex}
+
+\noindent Submit your solution in PDF file  and Latex source  file to blackboard by {\bf \duedate}.
+
+\begin{enumerate}
+% \item (double check ?? ) Write a complete final proof for Theorem 3.3. 
+% (You have to construct the proof using backward approach on working paper. No need to submit your working backward procedure.) 
+% Note that part of the proof is done by induction. Inside the proof by induction, we further use proof by cases.  
+% \item For the definition of {\em tableaux from premises},  write the following information
+\item (15)  For Definition 6.2,  write the following information in the order they occur in the definition
+\begin{itemize}
+ 	\item For each concept defined by this definition, write its name and parameters (if there is any), 
+ 	\item For each concept used in this definition, write its name and  arguments   (if there is any), and
+ 	\item  Write meta variables in the definition.
+ 	
+\end{itemize}
+ 
+\item (15) For Definition 8.4,  write the following information in the order they occur in the definition
+\begin{itemize}
+ 	\item For each concept defined by this definition, write its name and parameters (if there is any), 
+ 	\item For each concept used in this definition, write its name and  arguments   (if there is any), and
+ 	\item Write meta variables in the definition.
+ 	
+\end{itemize}
+ 
+
+%\item State and prove the soundness result of tableau proof of a proposition from a set of propositions. You may use the lemma in the book to prove this result. You need a complete proof in the form given in the proof of soundness of tableau proof at the end of L07. 
+
+\item (15)  i) Find the definition of {\em assignment} from Chapter 8. Write the definition below. 
+
+ii) Write the definition of another concept, whose name contains ``assignment", that was defined before (see L04). 
+
+iii) Is it precise for us to understand {\em truth assignment} as the combination of the English meaning of truth and the definition of {\em assignment} in i)? Why? 
+
+
+\item (15) i) Write the result of applying the definition of {\em satisfiable} (see Section 2.3 of L04). 
+% Please follow the definition of {\em formula, satisfiable} and {\em assignment} of Chapter 8.
+$$\set{\set{\neg A}, \set{A, \neg B}, \set{B}}.$$
+
+ii) According to the result above, is the formula satisfiable? If yes, give an assignment
+satisfying it. 
+
+\item (20) Find a resolution tree refutation of 
+% , i.e., resolution tree proof of $\emptyclause$ from,
+the following formula:
+$$\set{\set{A, \neg B, C}, \set{B, C}, \set{\neg A, C}, \set{B, \neg
+C}, \set{\neg B}}.$$
+
+\hide{
+\item Given a formula $S = \set{ \set{A, B}, \set{C, B}, \set{D, \neg B}, \set{E, \neg B}, \set{F, C}}$.
+What's the result of eliminating propositional letter $B$?
+}
+
+\item (20)  Prove that if the formula $S = \set{C_1, C_2}$ is satisfiable
+and $C$ is the resolvent of $C_1$ and $C_2$, then $C$ is
+satisfiable. Use our proof methodologies and format. Do not
+copy the proof in the book.
+
+%n\item Prove Lemma 5.4. Note do not copy the one in the book. Please construct the proof following the general proof techniques we used in the class.
+
+\end{enumerate}
+
+\end{document}
