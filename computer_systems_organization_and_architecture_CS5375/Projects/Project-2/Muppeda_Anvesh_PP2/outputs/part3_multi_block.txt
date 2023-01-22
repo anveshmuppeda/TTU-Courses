@@ -1,0 +1,97 @@
+login-20-26:/PP2/CS5375_GPU_Lecture/Project/mine$ clear
+login-20-26:/PP2/CS5375_GPU_Lecture/Project/mine$
+login-20-26:/PP2/CS5375_GPU_Lecture/Project/mine$ interactive -p gpu-build
+[CPUs=1 NNodes=1 Name=INTERACTIVE Account=default Partition=gpu-build X11=YES]
+
+salloc: Pending job allocation 7811012
+salloc: job 7811012 queued and waiting for resources
+salloc: job 7811012 has been allocated resources
+salloc: Granted job allocation 7811012
+salloc: Waiting for resource configuration
+salloc: Nodes gpu-20-11 are ready for job
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$ ls
+Makefile  matrixMul_cpu.cpp    matrixMul_gpu_v2_multi_thread.cu    matrixMul_gpu_v3_mutli_blocks.cu
+a.out     matrixMul_gpu_v1.cu  matrixMul_gpu_v3_1_mutli_blocks.cu
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$ make
+g++ matrixMul_cpu.cpp -o matrixMul_cpu.exe
+nvcc matrixMul_gpu_v1.cu -o matrixMul_gpu_v1.exe
+nvcc matrixMul_gpu_v2_multi_thread.cu -o matrixMul_gpu_v2_multi_thread.exe
+nvcc matrixMul_gpu_v3_mutli_blocks.cu -o matrixMul_gpu_v3_mutli_blocks.exe
+matrixMul_gpu_v3_mutli_blocks.cu(18): warning: variable "threadComputation" was declared but never referenced
+
+nvcc matrixMul_gpu_v3_1_mutli_blocks.cu -o matrixMul_gpu_v3_1_mutli_blocks.exe
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$ ls
+Makefile           matrixMul_cpu.exe     matrixMul_gpu_v2_multi_thread.cu    matrixMul_gpu_v3_1_mutli_blocks.exe
+a.out              matrixMul_gpu_v1.cu   matrixMul_gpu_v2_multi_thread.exe   matrixMul_gpu_v3_mutli_blocks.cu
+matrixMul_cpu.cpp  matrixMul_gpu_v1.exe  matrixMul_gpu_v3_1_mutli_blocks.cu  matrixMul_gpu_v3_mutli_blocks.exe
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$ time nvprof ./matrixMul_gpu_v3_mutli_blocks.exe
+==24971== NVPROF is profiling process 24971, command: ./matrixMul_gpu_v3_mutli_blocks.exe
+Starting GPU computation
+It took 0.006321 ms on avg.
+RUN OK.
+==24971== Profiling application: ./matrixMul_gpu_v3_mutli_blocks.exe
+==24971== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  5.5548ms         4  1.3887ms  1.0089ms  2.5079ms  gpu_Matrix_Multiplication(double*, double*, double*, int)
+      API calls:   96.97%  204.13ms         3  68.042ms  9.8300us  204.09ms  cudaMallocManaged
+                    2.62%  5.5115ms         1  5.5115ms  5.5115ms  5.5115ms  cudaDeviceSynchronize
+                    0.29%  603.53us         1  603.53us  603.53us  603.53us  cuDeviceTotalMem
+                    0.06%  132.30us         4  33.074us  4.9300us  114.23us  cudaLaunchKernel
+                    0.05%  97.291us       101     963ns     121ns  40.243us  cuDeviceGetAttribute
+                    0.01%  18.012us         1  18.012us  18.012us  18.012us  cuDeviceGetName
+                    0.00%  4.1250us         3  1.3750us     362ns  3.3630us  cudaFreeHost
+                    0.00%  1.9910us         1  1.9910us  1.9910us  1.9910us  cuDeviceGetPCIBusId
+                    0.00%  1.0530us         3     351ns     179ns     666ns  cuDeviceGetCount
+                    0.00%     702ns         2     351ns     172ns     530ns  cuDeviceGet
+                    0.00%     232ns         1     232ns     232ns     232ns  cuDeviceGetUuid
+
+==24971== Unified Memory profiling result:
+Device "Tesla V100-PCIE-32GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     114  53.895KB  4.0000KB  0.9961MB  6.000000MB  754.1440us  Host To Device
+      12  170.67KB  4.0000KB  0.9961MB  2.000000MB  170.2720us  Device To Host
+      11         -         -         -           -  1.961408ms  Gpu page fault groups
+Total CPU Page faults: 24
+
+real    0m0.627s
+user    0m0.096s
+sys     0m0.202s
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$ time nvprof ./matrixMul_gpu_v3_1_mutli_blocks.exe
+==25000== NVPROF is profiling process 25000, command: ./matrixMul_gpu_v3_1_mutli_blocks.exe
+Starting GPU computation
+It took 0.006333 ms on avg.
+RUN OK.
+==25000== Profiling application: ./matrixMul_gpu_v3_1_mutli_blocks.exe
+==25000== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  5.2975ms         4  1.3244ms  899.03us  2.5954ms  gpu_Matrix_Multiplication(double*, double*, double*, int)
+      API calls:   97.00%  201.07ms         3  67.023ms  9.7580us  201.03ms  cudaMallocManaged
+                    2.53%  5.2543ms         1  5.2543ms  5.2543ms  5.2543ms  cudaDeviceSynchronize
+                    0.32%  672.83us         1  672.83us  672.83us  672.83us  cuDeviceTotalMem
+                    0.06%  132.89us         4  33.221us  5.2530us  114.08us  cudaLaunchKernel
+                    0.06%  119.78us       101  1.1850us     116ns  49.708us  cuDeviceGetAttribute
+                    0.01%  21.605us         1  21.605us  21.605us  21.605us  cuDeviceGetName
+                    0.00%  4.1130us         3  1.3710us     387ns  3.2930us  cudaFreeHost
+                    0.00%  2.1550us         1  2.1550us  2.1550us  2.1550us  cuDeviceGetPCIBusId
+                    0.00%  1.1440us         3     381ns     173ns     784ns  cuDeviceGetCount
+                    0.00%     610ns         2     305ns     166ns     444ns  cuDeviceGet
+                    0.00%     229ns         1     229ns     229ns     229ns  cuDeviceGetUuid
+
+==25000== Unified Memory profiling result:
+Device "Tesla V100-PCIE-32GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+     127  48.378KB  4.0000KB  0.9961MB  6.000000MB  804.5760us  Host To Device
+      12  170.67KB  4.0000KB  0.9961MB  2.000000MB  170.2720us  Device To Host
+       9         -         -         -           -  1.708032ms  Gpu page fault groups
+Total CPU Page faults: 24
+
+real    0m0.475s
+user    0m0.104s
+sys     0m0.186s
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$
+

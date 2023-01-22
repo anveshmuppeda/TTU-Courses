@@ -1,0 +1,115 @@
+login-20-25:/anvesh/cache$
+login-20-25:/anvesh/cache$
+login-20-25:/anvesh/cache$ gcc cachesim.c
+login-20-25:/anvesh/cache$ ./a.out trace_for_students/trace.hpcg
+Enter the one of the Mapping Technique from below list
+ 1. Direct Mapping
+ 2. Full Way Mapping
+ 3. N-Way Mapping
+ 4. Two-Level Cache(L1 & L2)
+ 5.Exit
+
+3
+Welcome to the N-Way Mapping Technique
+Please enter the N size in N-Way Mapping
+2
+
+==================================
+Cache type:    N-Way Cache
+==================================
+Cache Hits:         1260228
+Cache Misses:       239772
+Compulsory Misses:  2048
+Capacity Misses:    237724
+
+---Total 2-way Cache Performance---
+Total Accesses:   1500000
+Cache Hit rate:   84.0152%
+Cache Miss rate:  15.9848%
+
+Cache Miss rate:   15.9848%
+Cache Compulsory Miss rate:  0.1365%
+Cache Capacity Miss rate:   15.8483%
+
+
+login-20-25:/anvesh/cache$
+login-20-25:/anvesh/cache$ ./a.out trace_for_students/trace.hpcg
+Enter the one of the Mapping Technique from below list
+ 1. Direct Mapping
+ 2. Full Way Mapping
+ 3. N-Way Mapping
+ 4. Two-Level Cache(L1 & L2)
+ 5.Exit
+
+5
+Thank you, exiting the code!!
+login-20-25:/anvesh/cache$
+login-20-25:/anvesh/cache$ gcc cachesim.c
+login-20-25:/anvesh/cache$ ./a.out trace_for_students/trace.hpcg
+Enter the one of the Mapping Technique from below list
+ 1. Direct Mapping
+ 2. Full Way Mapping
+ 3. N-Way Mapping
+ 4. Two-Level Cache(L1 & L2)
+ 5.Exit
+
+3
+Welcome to the N-Way Mapping Technique
+Please enter the N size in N-Way Mapping
+2
+
+==================================
+Cache type:    N-Way Cache
+==================================
+Cache Hits:         1277498
+Cache Misses:       222502
+Compulsory Misses:  1024
+Capacity Misses:    221478
+
+---Total 2-way Cache Performance---
+Total Accesses:   1500000
+Cache Hit rate:   85.1665%
+Cache Miss rate:  14.8335%
+
+Cache Miss rate:   14.8335%
+Cache Compulsory Miss rate:  0.0683%
+Cache Capacity Miss rate:   14.7652%
+
+
+login-20-25:/anvesh/cache$
+login-20-25:/anvesh/cache$
+login-20-25:/anvesh/cache$ gcc cachesim.c
+login-20-25:/anvesh/cache$
+login-20-25:/anvesh/cache$ ./a.out trace_for_students/trace.hpcg
+Enter the one of the Mapping Technique from below list
+ 1. Direct Mapping
+ 2. Full Way Mapping
+ 3. N-Way Mapping
+ 4. Two-Level Cache(L1 & L2)
+ 5.Exit
+
+3
+Welcome to the N-Way Mapping Technique
+Please enter the N size in N-Way Mapping
+2
+
+==================================
+Cache type:    N-Way Cache
+==================================
+Cache Hits:         1321073
+Cache Misses:       178927
+Compulsory Misses:  256
+Capacity Misses:    178671
+
+---Total 2-way Cache Performance---
+Total Accesses:   1500000
+Cache Hit rate:   88.0715%
+Cache Miss rate:  11.9285%
+
+Cache Miss rate:   11.9285%
+Cache Compulsory Miss rate:  0.0171%
+Cache Capacity Miss rate:   11.9114%
+
+
+login-20-25:/anvesh/cache$
+

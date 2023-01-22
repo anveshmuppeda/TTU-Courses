@@ -1,0 +1,102 @@
+login-20-26:/PP2/CS5375_GPU_Lecture/Project/mine$ clear
+login-20-26:/PP2/CS5375_GPU_Lecture/Project/mine$
+login-20-26:/PP2/CS5375_GPU_Lecture/Project/mine$ interactive -p gpu-build
+[CPUs=1 NNodes=1 Name=INTERACTIVE Account=default Partition=gpu-build X11=YES]
+
+salloc: Pending job allocation 7811071
+salloc: job 7811071 queued and waiting for resources
+salloc: job 7811071 has been allocated resources
+salloc: Granted job allocation 7811071
+salloc: Waiting for resource configuration
+salloc: Nodes gpu-20-11 are ready for job
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$ make
+g++ matrixMul_cpu.cpp -o matrixMul_cpu.exe
+nvcc matrixMul_gpu_v1.cu -o matrixMul_gpu_v1.exe
+nvcc matrixMul_gpu_v2_multi_thread.cu -o matrixMul_gpu_v2_multi_thread.exe
+nvcc matrixMul_gpu_v3_mutli_blocks.cu -o matrixMul_gpu_v3_mutli_blocks.exe
+matrixMul_gpu_v3_mutli_blocks.cu(18): warning: variable "threadComputation" was declared but never referenced
+
+nvcc matrixMul_gpu_v3_1_mutli_blocks.cu -o matrixMul_gpu_v3_1_mutli_blocks.exe
+nvcc matrixMul_gpu_v4_optimize.cu -o matrixMul_gpu_v4_optimize.exe
+matrixMul_gpu_v4_optimize.cu(18): warning: variable "threadComputation" was declared but never referenced
+
+nvcc matrixMul_gpu_v4_prefetch.cu -o matrixMul_gpu_v4_prefetch.exe
+matrixMul_gpu_v4_prefetch.cu(18): warning: variable "threadComputation" was declared but never referenced
+
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$ ls
+Makefile           matrixMul_gpu_v1.cu                matrixMul_gpu_v3_1_mutli_blocks.cu   matrixMul_gpu_v4_optimize.cu
+a.out              matrixMul_gpu_v1.exe               matrixMul_gpu_v3_1_mutli_blocks.exe  matrixMul_gpu_v4_optimize.exe
+matrixMul_cpu.cpp  matrixMul_gpu_v2_multi_thread.cu   matrixMul_gpu_v3_mutli_blocks.cu     matrixMul_gpu_v4_prefetch.cu
+matrixMul_cpu.exe  matrixMul_gpu_v2_multi_thread.exe  matrixMul_gpu_v3_mutli_blocks.exe    matrixMul_gpu_v4_prefetch.exe
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$ time nvprof ./matrixMul_gpu_v4_optimize.exe
+==30283== NVPROF is profiling process 30283, command: ./matrixMul_gpu_v4_optimize.exe
+Starting GPU computation
+It took 0.003333 ms on avg.
+RUN OK.
+==30283== Profiling application: ./matrixMul_gpu_v4_optimize.exe
+==30283== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   79.44%  3.5924ms         4  898.09us  895.42us  903.10us  gpu_Matrix_Multiplication(double*, double*, double*, int)
+                   20.56%  929.66us         1  929.66us  929.66us  929.66us  init(double*, double*, double*, int)
+      API calls:   97.53%  203.78ms         3  67.928ms  41.193us  203.68ms  cudaMallocManaged
+                    2.10%  4.3899ms         1  4.3899ms  4.3899ms  4.3899ms  cudaDeviceSynchronize
+                    0.27%  567.71us         1  567.71us  567.71us  567.71us  cuDeviceTotalMem
+                    0.04%  93.738us       101     928ns     119ns  37.853us  cuDeviceGetAttribute
+                    0.03%  69.200us         5  13.840us  4.3360us  30.254us  cudaLaunchKernel
+                    0.01%  18.472us         1  18.472us  18.472us  18.472us  cuDeviceGetName
+                    0.00%  7.7940us         3  2.5980us     440ns  6.9050us  cudaFreeHost
+                    0.00%  2.2010us         1  2.2010us  2.2010us  2.2010us  cuDeviceGetPCIBusId
+                    0.00%  1.1230us         3     374ns     170ns     728ns  cuDeviceGetCount
+                    0.00%     657ns         2     328ns     143ns     514ns  cuDeviceGet
+                    0.00%     250ns         1     250ns     250ns     250ns  cuDeviceGetUuid
+
+==30283== Unified Memory profiling result:
+Device "Tesla V100-PCIE-32GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+      12  170.67KB  4.0000KB  0.9961MB  2.000000MB  170.4960us  Device To Host
+       8         -         -         -           -  908.7360us  Gpu page fault groups
+Total CPU Page faults: 6
+
+real    0m0.623s
+user    0m0.091s
+sys     0m0.200s
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$ time nvprof ./matrixMul_gpu_v4_prefetch.exe
+==30316== NVPROF is profiling process 30316, command: ./matrixMul_gpu_v4_prefetch.exe
+Starting GPU computation
+It took 0.002667 ms on avg.
+RUN OK.
+==30316== Profiling application: ./matrixMul_gpu_v4_prefetch.exe
+==30316== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   99.66%  3.5965ms         4  899.12us  895.13us  902.07us  gpu_Matrix_Multiplication(double*, double*, double*, int)
+                    0.34%  12.448us         1  12.448us  12.448us  12.448us  init(double*, double*, double*, int)
+      API calls:   90.92%  200.68ms         3  66.894ms  9.6390us  200.65ms  cudaMallocManaged
+                    8.46%  18.668ms         1  18.668ms  18.668ms  18.668ms  cudaDeviceSynchronize
+                    0.28%  611.55us         3  203.85us  11.076us  439.38us  cudaMemPrefetchAsync
+                    0.26%  574.96us         1  574.96us  574.96us  574.96us  cuDeviceTotalMem
+                    0.04%  92.425us       101     915ns     116ns  38.195us  cuDeviceGetAttribute
+                    0.03%  64.702us         5  12.940us  4.8940us  26.029us  cudaLaunchKernel
+                    0.01%  18.372us         1  18.372us  18.372us  18.372us  cuDeviceGetName
+                    0.00%  8.6230us         3  2.8740us     364ns  7.7510us  cudaFreeHost
+                    0.00%  2.3350us         1  2.3350us  2.3350us  2.3350us  cudaGetDevice
+                    0.00%  2.2600us         1  2.2600us  2.2600us  2.2600us  cuDeviceGetPCIBusId
+                    0.00%  1.1520us         3     384ns     147ns     798ns  cuDeviceGetCount
+                    0.00%     667ns         2     333ns     153ns     514ns  cuDeviceGet
+                    0.00%     240ns         1     240ns     240ns     240ns  cuDeviceGetUuid
+
+==30316== Unified Memory profiling result:
+Device "Tesla V100-PCIE-32GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+      12  170.67KB  4.0000KB  0.9961MB  2.000000MB  170.5920us  Device To Host
+Total CPU Page faults: 6
+
+real    0m0.576s
+user    0m0.117s
+sys     0m0.182s
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$

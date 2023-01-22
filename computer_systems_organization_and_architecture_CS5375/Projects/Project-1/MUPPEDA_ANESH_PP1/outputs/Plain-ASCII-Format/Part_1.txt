@@ -1,0 +1,179 @@
+Pre-authentication banner message from server:
+| Use of Texas Tech computers and networks requires prior authorization.
+| Your use of these systems may be monitored by automated and/or manual
+| security testing procedures. Unauthorized use of these systems is
+| prohibited and abuse is subject to immediate termination of the account
+| or service and University disciplinary procedure and/or criminal
+| prosecution.
+|
+| If you have questions concerning this notification screen, please
+| contact IT Help Central at 742-HELP (4357).
+|
+| If you are having trouble logging in, make sure you are using your
+| eRaider userid/password combination.
+End of banner message from server
+    ????????????????????????????????????????????????????????????????????????
+    ?                 • MobaXterm Personal Edition v22.1 •                 ?
+    ?               (SSH client, X server and network tools)               ?
+    ?                                                                      ?
+    ? ? SSH session to amuppeda@aclb01-vip213.ttu.edu                      ?
+    ?   • Direct SSH      :  ?                                             ?
+    ?   • SSH compression :  ?                                             ?
+    ?   • SSH-browser     :  ?                                             ?
+    ?   • X11-forwarding  :  ?  (remote display is forwarded through SSH)  ?
+    ?                                                                      ?
+    ? ? For more info, ctrl+click on help or visit our website.            ?
+    ????????????????????????????????????????????????????????????????????????
+
+
+
+** ************************************************************************* **
+**              _____          _   _____       _     _                       **
+**             |  __ \        | | |  __ \     (_)   | |                      **
+**             | |__) |___  __| | | |__) |__ _ _  __| | ___ _ __             **
+**             |  _  // _ \/ _` | |  _  // _` | |/ _` |/ _ \ '__|            **
+**             | | \ \  __/ (_| | | | \ \ (_| | | (_| |  __/ |               **
+**             |_|  \_\___|\__,_| |_|  \_\__,_|_|\__,_|\___|_|               **
+**                                                                           **
+**    -------------------------------------------------------------------    **
+**                      Upcoming Scheduled Maintenance                       **
+**     ****             ****** U P D A T E ! ! !******               ****    **
+**     **** Next scheduled maintenance will occur Oct 31-Nov 8, 2022 ****    **
+**     **** Next scheduled maintenance will occur Oct 31-Nov 8, 2022 ****    **
+**     **** Next scheduled maintenance will occur Oct 31-Nov 8, 2022 ****    **
+**     **** Next scheduled maintenance will occur Oct 31-Nov 8, 2022 ****    **
+**     **** Next scheduled maintenance will occur Oct 31-Nov 8, 2022 ****    **
+**     More information at:  www.hpcc.ttu.edu/operations/maintenance.php     **
+**    -------------------------------------------------------------------    **
+**                     Upcoming HPCC Training Sessions:                      **
+**      Course                      Date                Time                 **
+**      Introduction to Nextflow    October  26, 2022   1pm to 3pm           **
+**      Introduction to MATLAB      November 9, 2022    10am to 3pm          **
+**    For more information see http://www.hpcc.ttu.edu/about/training.php    **
+**    -------------------------------------------------------------------    **
+**                   *** General Cautions and Notes ***                      **
+**    DO NOT RUN CPU-INTENSIVE JOBS ON THE LOGIN NODES! Use the scheduler!   **
+**    DO NOT TRANSFER DATA THORUGH THE LOGIN NODES! Use the data transfer    **
+**    service described on the HPCC Operations -> Data Transfer web page.    **
+**    -------------------------------------------------------------------    **
+**    *Be aware that /lustre/work and /lustre/scratch are NOT backed up.*    **
+**    Users should store important source code and data in their /home       **
+**    area and keep extra copies of such files on non-HPCC storage drives.   **
+**    Details at https://www.depts.ttu.edu/hpcc/operations/datapolicy.php    **
+**    -------------------------------------------------------------------    **
+**    For information on security and privacy of files on HPCC systems       **
+**    see https://www.depts.ttu.edu/hpcc/operations/security.php             **
+**    Contact hpccsupport@ttu.edu for help or additional information.        **
+** ************************************************************************* **
+
+      Message of the Day was last updated: October 26, 2022 at 02:45 PM
+
+Last login: Thu Oct 27 18:10:19 2022 from 129.118.242.213
+Current Storage Usage for amuppeda:
+                /home/amuppeda - space:  16 of 300 GB ( 5%), file count:   123377 of  1000000 files (12%).
+         /lustre/work/amuppeda - space:   0 of 700 GB ( 0%), file count:        1 of  1000000 files ( 0%).
+
+login-20-25:$ cd anvesh/cache
+login-20-25:/anvesh/cache$ ls
+cachesim.c  cachesim.h  trace_for_students
+login-20-25:/anvesh/cache$
+login-20-25:/anvesh/cache$
+login-20-25:/anvesh/cache$ gcc cachesim.c
+login-20-25:/anvesh/cache$
+login-20-25:/anvesh/cache$
+login-20-25:/anvesh/cache$ ls
+a.out  cachesim.c  cachesim.h  trace_for_students
+login-20-25:/anvesh/cache$
+login-20-25:/anvesh/cache$ ./a.out trace_for_students/trace.stream
+Enter the one of the Mapping Technique from below list
+ 1. Direct Mapping
+ 2. Full Way Mapping
+ 3. N-Way Mapping
+ 4. Two-Level Cache(L1 & L2)
+ 5.Exit
+
+1
+Welcome to the Direct Mapping Technique
+
+==================================
+Cache type:    Direct-Mapped Cache
+==================================
+Cache Hits:    1068958
+Cache Misses:  2165097
+---Total performance---
+Total Accesses:   3234055
+Cache Hit rate:   33.0532%
+Cache Miss rate:  66.9468%
+
+login-20-25:/anvesh/cache$
+login-20-25:/anvesh/cache$ ./a.out trace_for_students/trace.hpcg
+Enter the one of the Mapping Technique from below list
+ 1. Direct Mapping
+ 2. Full Way Mapping
+ 3. N-Way Mapping
+ 4. Two-Level Cache(L1 & L2)
+ 5.Exit
+
+1
+Welcome to the Direct Mapping Technique
+
+==================================
+Cache type:    Direct-Mapped Cache
+==================================
+Cache Hits:    1314578
+Cache Misses:  185422
+---Total performance---
+Total Accesses:   1500000
+Cache Hit rate:   87.6385%
+Cache Miss rate:  12.3615%
+
+login-20-25:/anvesh/cache$ ./a.out trace_for_students/trace.stream_10
+Enter the one of the Mapping Technique from below list
+ 1. Direct Mapping
+ 2. Full Way Mapping
+ 3. N-Way Mapping
+ 4. Two-Level Cache(L1 & L2)
+ 5.Exit
+
+1
+Welcome to the Direct Mapping Technique
+
+==================================
+Cache type:    Direct-Mapped Cache
+==================================
+Cache Hits:    0
+Cache Misses:  10
+---Total performance---
+Total Accesses:   10
+Cache Hit rate:   0.0000%
+Cache Miss rate:  100.0000%
+
+login-20-25:/anvesh/cache$ ./a.out trace_for_students/trace.stream_20
+Enter the one of the Mapping Technique from below list
+ 1. Direct Mapping
+ 2. Full Way Mapping
+ 3. N-Way Mapping
+ 4. Two-Level Cache(L1 & L2)
+ 5.Exit
+
+1
+Welcome to the Direct Mapping Technique
+
+==================================
+Cache type:    Direct-Mapped Cache
+==================================
+Cache Hits:    4
+Cache Misses:  16
+---Total performance---
+Total Accesses:   20
+Cache Hit rate:   20.0000%
+Cache Miss rate:  80.0000%
+
+login-20-25:/anvesh/cache$ ./a.out trace_for_students/trace.
+trace.hpcg       trace.stream     trace.stream_10  trace.stream_20
+login-20-25:/anvesh/cache$ ./a.out trace_for_students/
+hw2_q4_memoryaddr  own                trace.hpcg         trace.stream       trace.stream_10    trace.stream_20
+login-20-25:/anvesh/cache$
+login-20-25:/anvesh/cache$
+
+

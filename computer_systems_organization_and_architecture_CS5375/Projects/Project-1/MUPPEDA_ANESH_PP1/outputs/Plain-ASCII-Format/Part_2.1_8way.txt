@@ -1,0 +1,101 @@
+login-20-25:/anvesh/cache$ 
+login-20-25:/anvesh/cache$
+login-20-25:/anvesh/cache$ gcc cachesim.c
+login-20-25:/anvesh/cache$
+login-20-25:/anvesh/cache$ ./a.out trace_for_students/trace.hpcg
+Enter the one of the Mapping Technique from below list
+ 1. Direct Mapping
+ 2. Full Way Mapping
+ 3. N-Way Mapping
+ 4. Two-Level Cache(L1 & L2)
+ 5.Exit
+
+3
+Welcome to the N-Way Mapping Technique
+Please enter the N size in N-Way Mapping
+8
+
+==================================
+Cache type:    N-Way Cache
+==================================
+Cache Hits:         1286122
+Cache Misses:       213878
+Compulsory Misses:  2048
+Capacity Misses:    211830
+
+---Total 8-way Cache Performance---
+Total Accesses:   1500000
+Cache Hit rate:   85.7415%
+Cache Miss rate:  14.2585%
+
+Cache Miss rate:   14.2585%
+Cache Compulsory Miss rate:  0.1365%
+Cache Capacity Miss rate:   14.1220%
+
+
+login-20-25:/anvesh/cache$
+login-20-25:/anvesh/cache$ gcc cachesim.c
+login-20-25:/anvesh/cache$
+login-20-25:/anvesh/cache$ ./a.out trace_for_students/trace.hpcg
+Enter the one of the Mapping Technique from below list
+ 1. Direct Mapping
+ 2. Full Way Mapping
+ 3. N-Way Mapping
+ 4. Two-Level Cache(L1 & L2)
+ 5.Exit
+
+3
+Welcome to the N-Way Mapping Technique
+Please enter the N size in N-Way Mapping
+8
+
+==================================
+Cache type:    N-Way Cache
+==================================
+Cache Hits:         1299997
+Cache Misses:       200003
+Compulsory Misses:  1024
+Capacity Misses:    198979
+
+---Total 8-way Cache Performance---
+Total Accesses:   1500000
+Cache Hit rate:   86.6665%
+Cache Miss rate:  13.3335%
+
+Cache Miss rate:   13.3335%
+Cache Compulsory Miss rate:  0.0683%
+Cache Capacity Miss rate:   13.2653%
+login-20-25:/anvesh/cache$ ./a.out trace_for_students/trace.hpcg
+Enter the one of the Mapping Technique from below list
+ 1. Direct Mapping
+ 2. Full Way Mapping
+ 3. N-Way Mapping
+ 4. Two-Level Cache(L1 & L2)
+ 5.Exit
+
+3
+Welcome to the N-Way Mapping Technique
+Please enter the N size in N-Way Mapping
+8
+
+==================================
+Cache type:    N-Way Cache
+==================================
+Cache Hits:         1306699
+Cache Misses:       193301
+Compulsory Misses:  256
+Capacity Misses:    193045
+
+---Total 8-way Cache Performance---
+Total Accesses:   1500000
+Cache Hit rate:   87.1133%
+Cache Miss rate:  12.8867%
+
+Cache Miss rate:   12.8867%
+Cache Compulsory Miss rate:  0.0171%
+Cache Capacity Miss rate:   12.8697%
+
+
+login-20-25:/anvesh/cache$
+login-20-25:/anvesh/cache$
+

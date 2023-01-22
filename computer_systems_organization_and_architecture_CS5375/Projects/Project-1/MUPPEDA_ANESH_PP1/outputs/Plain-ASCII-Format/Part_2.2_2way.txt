@@ -1,0 +1,118 @@
+login-20-26:/anvesh/cache$ 
+login-20-26:/anvesh/cache$
+login-20-26:/anvesh/cache$ gcc cachesim.c
+login-20-26:/anvesh/cache$
+login-20-26:/anvesh/cache$ ./a.out trace_for_students/trace.hpcg
+Enter the one of the Mapping Technique from below list
+ 1. Direct Mapping
+ 2. Full Way Mapping
+ 3. N-Way Mapping
+ 4. Two-Level Cache(L1 & L2)
+ 5.Exit
+
+3
+Welcome to the N-Way Mapping Technique
+Please enter the N size in N-Way Mapping
+2
+BLOCK SIZE = 64 Bytes
+2-WAY
+CACHE SIZE = 16384 Bytes
+NUMBER OF BLOCKS = 1024
+
+==================================
+Cache type:    N-Way Cache
+==================================
+Cache Hits:         1315121
+Cache Misses:       184879
+Compulsory Misses:  1024
+Capacity Misses:    183855
+
+---Total 2-way Cache Performance---
+Total Accesses:   1500000
+Cache Hit rate:   83.1247%
+Cache Miss rate:  16.8853%
+
+Cache Miss rate:   16.8853%
+Cache Compulsory Miss rate:  0.0283%
+Cache Capacity Miss rate:   16.8670%
+
+
+login-20-26:/anvesh/cache$
+login-20-26:/anvesh/cache$
+login-20-26:/anvesh/cache$ gcc cachesim.c
+login-20-26:/anvesh/cache$ ./a.out trace_for_students/trace.hpcg
+Enter the one of the Mapping Technique from below list
+ 1. Direct Mapping
+ 2. Full Way Mapping
+ 3. N-Way Mapping
+ 4. Two-Level Cache(L1 & L2)
+ 5.Exit
+
+3
+Welcome to the N-Way Mapping Technique
+Please enter the N size in N-Way Mapping
+2
+BLOCK SIZE = 64 Bytes
+2-WAY
+CACHE SIZE = 32768 Bytes
+NUMBER OF BLOCKS = 1024
+
+==================================
+Cache type:    N-Way Cache
+==================================
+Cache Hits:         1318286
+Cache Misses:       181714
+Compulsory Misses:  1024
+Capacity Misses:    180690
+
+---Total 2-way Cache Performance---
+Total Accesses:   1500000
+Cache Hit rate:   86.8957%
+Cache Miss rate:  13.1143%
+
+Cache Miss rate:   13.1143%
+Cache Compulsory Miss rate:  0.0383%
+Cache Capacity Miss rate:   13.0760%
+
+
+login-20-26:/anvesh/cache$
+login-20-26:/anvesh/cache$
+login-20-26:/anvesh/cache$ gcc cachesim.c
+login-20-26:/anvesh/cache$ ./a.out trace_for_students/trace.hpcg
+Enter the one of the Mapping Technique from below list
+ 1. Direct Mapping
+ 2. Full Way Mapping
+ 3. N-Way Mapping
+
+3
+Welcome to the N-Way Mapping Technique
+Please enter the N size in N-Way Mapping
+2
+BLOCK SIZE = 64 Bytes
+2-WAY
+CACHE SIZE = 65536 Bytes
+NUMBER OF BLOCKS = 1024
+ 4. Two-Level Cache(L1 & L2)
+ 5.Exit
+
+
+==================================
+Cache type:    N-Way Cache
+==================================
+Cache Hits:         1315517
+Cache Misses:       184483
+Compulsory Misses:  1024
+Capacity Misses:    183459
+
+---Total 2-way Cache Performance---
+Total Accesses:   1500000
+Cache Hit rate:   87.2811%
+Cache Miss rate:  12.7289%
+
+Cache Miss rate:   12.7289%
+Cache Compulsory Miss rate:  0.0783%
+Cache Capacity Miss rate:   12.6506%
+
+
+login-20-26:/anvesh/cache$
+

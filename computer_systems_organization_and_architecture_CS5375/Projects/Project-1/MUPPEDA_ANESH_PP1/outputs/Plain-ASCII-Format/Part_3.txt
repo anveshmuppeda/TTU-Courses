@@ -1,0 +1,244 @@
+login-20-26:/anvesh/cache$
+login-20-26:/anvesh/cache$ 
+login-20-26:/anvesh/cache$
+login-20-26:/anvesh/cache$ gcc cachesim.c
+login-20-26:/anvesh/cache$
+login-20-26:/anvesh/cache$ ./a.out trace_for_students/trace.hpcg
+Enter the one of the Mapping Technique from below list
+ 1. Direct Mapping
+ 2. Full Way Mapping
+ 3. N-Way Mapping
+ 4. Two-Level Cache(L1 & L2)
+ 5.Exit
+
+4
+Welcome to the L1 & L2 cache levels
+==================================
+Cache type:    L1-Cache
+==================================
+L1 BLOCK SIZE = 64 Bytes
+2-WAY
+L1 CACHE SIZE = 65536 Bytes
+L1 NUMBER OF BLOCKS = 1024
+Cache Hits:               1307956
+Cache Misses:             192044
+L1 Compulsory Misses:     1024
+L1 Capacity Misses:       191020
+
+---L1 Performance---
+Total Accesses:   1500000
+Cache Hit rate:   87.1971%
+Cache Miss rate:  12.8029%
+
+Cache Compulsory Miss rate:  0.0683%
+Cache Capacity Miss rate:   12.7347%
+
+
+==================================
+Cache type:    L2-Cache
+====================================
+L2 BLOCK SIZE = 64 Bytes
+8-WAY
+L2 CACHE SIZE = 1048576 Bytes
+L2 NUMBER OF BLOCKS = 16384
+Cache Hits:              20319
+Cache Misses:            171725
+L2 Compulsory Misses:    16384
+L2 Capacity Misses:      155341
+
+---L2 Performance---
+Total Accesses:   192044
+Cache Hit rate:   10.5804%
+Cache Miss rate:  89.4196%
+
+Cache Compulsory Miss rate:  8.5314%
+Cache Capacity Miss rate:   80.8882%
+
+---L1 & L2 overal performance---
+Total Accesses:   1500000
+Cache Hit rate:   88.5517%
+Cache Miss rate:  11.4483%
+
+
+login-20-26:/anvesh/cache$
+login-20-26:/anvesh/cache$
+login-20-26:/anvesh/cache$
+login-20-26:/anvesh/cache$
+login-20-26:/anvesh/cache$
+login-20-26:/anvesh/cache$ ./a.out trace_for_students/trace.stream
+Enter the one of the Mapping Technique from below list
+ 1. Direct Mapping
+ 2. Full Way Mapping
+ 3. N-Way Mapping
+ 4. Two-Level Cache(L1 & L2)
+ 5.Exit
+
+4
+Welcome to the L1 & L2 cache levels
+==================================
+Cache type:    L1-Cache
+==================================
+L1 BLOCK SIZE = 64 Bytes
+2-WAY
+L1 CACHE SIZE = 65536 Bytes
+L1 NUMBER OF BLOCKS = 1024
+Cache Hits:               1069284
+Cache Misses:             2164771
+L1 Compulsory Misses:     1024
+L1 Capacity Misses:       2163747
+
+---L1 Performance---
+Total Accesses:   3234055
+Cache Hit rate:   33.0633%
+Cache Miss rate:  66.9367%
+
+Cache Compulsory Miss rate:  0.0317%
+Cache Capacity Miss rate:   66.9051%
+
+
+==================================
+Cache type:    L2-Cache
+====================================
+L2 BLOCK SIZE = 64 Bytes
+8-WAY
+L2 CACHE SIZE = 1048576 Bytes
+L2 NUMBER OF BLOCKS = 16384
+Cache Hits:              15012
+Cache Misses:            2149759
+L2 Compulsory Misses:    7584
+L2 Capacity Misses:      2142175
+
+---L2 Performance---
+Total Accesses:   2164771
+Cache Hit rate:   0.6935%
+Cache Miss rate:  99.3065%
+
+Cache Compulsory Miss rate:  0.3503%
+Cache Capacity Miss rate:   98.9562%
+
+---L1 & L2 overal performance---
+Total Accesses:   3234055
+Cache Hit rate:   33.5274%
+Cache Miss rate:  66.4726%
+
+
+login-20-26:/anvesh/cache$
+login-20-26:/anvesh/cache$
+login-20-26:/anvesh/cache$ ./a.out trace_for_students/trace.stream_10
+Enter the one of the Mapping Technique from below list
+ 1. Direct Mapping
+ 2. Full Way Mapping
+ 3. N-Way Mapping
+ 4. Two-Level Cache(L1 & L2)
+ 5.Exit
+
+4
+Welcome to the L1 & L2 cache levels
+==================================
+Cache type:    L1-Cache
+==================================
+L1 BLOCK SIZE = 64 Bytes
+2-WAY
+L1 CACHE SIZE = 65536 Bytes
+L1 NUMBER OF BLOCKS = 1024
+Cache Hits:               0
+Cache Misses:             10
+L1 Compulsory Misses:     10
+L1 Capacity Misses:       0
+
+---L1 Performance---
+Total Accesses:   10
+Cache Hit rate:   0.0000%
+Cache Miss rate:  100.0000%
+
+Cache Compulsory Miss rate:  100.0000%
+Cache Capacity Miss rate:   0.0000%
+
+
+==================================
+Cache type:    L2-Cache
+====================================
+L2 BLOCK SIZE = 64 Bytes
+8-WAY
+L2 CACHE SIZE = 1048576 Bytes
+L2 NUMBER OF BLOCKS = 16384
+Cache Hits:              0
+Cache Misses:            10
+L2 Compulsory Misses:    10
+L2 Capacity Misses:      0
+
+---L2 Performance---
+Total Accesses:   10
+Cache Hit rate:   0.0000%
+Cache Miss rate:  100.0000%
+
+Cache Compulsory Miss rate:  100.0000%
+Cache Capacity Miss rate:   0.0000%
+
+---L1 & L2 overal performance---
+Total Accesses:   10
+Cache Hit rate:   0.0000%
+Cache Miss rate:  100.0000%
+
+
+login-20-26:/anvesh/cache$
+login-20-26:/anvesh/cache$
+login-20-26:/anvesh/cache$ ./a.out trace_for_students/trace.stream_20
+Enter the one of the Mapping Technique from below list
+ 1. Direct Mapping
+ 2. Full Way Mapping
+ 3. N-Way Mapping
+ 4. Two-Level Cache(L1 & L2)
+ 5.Exit
+
+4
+Welcome to the L1 & L2 cache levels
+==================================
+Cache type:    L1-Cache
+==================================
+L1 BLOCK SIZE = 64 Bytes
+2-WAY
+L1 CACHE SIZE = 65536 Bytes
+L1 NUMBER OF BLOCKS = 1024
+Cache Hits:               4
+Cache Misses:             16
+L1 Compulsory Misses:     16
+L1 Capacity Misses:       0
+
+---L1 Performance---
+Total Accesses:   20
+Cache Hit rate:   20.0000%
+Cache Miss rate:  80.0000%
+
+Cache Compulsory Miss rate:  80.0000%
+Cache Capacity Miss rate:   0.0000%
+
+
+==================================
+Cache type:    L2-Cache
+====================================
+L2 BLOCK SIZE = 64 Bytes
+8-WAY
+L2 CACHE SIZE = 1048576 Bytes
+L2 NUMBER OF BLOCKS = 16384
+Cache Hits:              0
+Cache Misses:            16
+L2 Compulsory Misses:    16
+L2 Capacity Misses:      0
+
+---L2 Performance---
+Total Accesses:   16
+Cache Hit rate:   0.0000%
+Cache Miss rate:  100.0000%
+
+Cache Compulsory Miss rate:  100.0000%
+Cache Capacity Miss rate:   0.0000%
+
+---L1 & L2 overal performance---
+Total Accesses:   20
+Cache Hit rate:   20.0000%
+Cache Miss rate:  80.0000%
+
+
+login-20-26:/anvesh/cache$
+

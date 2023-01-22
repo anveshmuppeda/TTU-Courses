@@ -1,0 +1,97 @@
+login-20-25:/anvesh/cache$ 
+login-20-25:/anvesh/cache$
+login-20-25:/anvesh/cache$ ./a.out trace_for_students/trace.hpcg
+Enter the one of the Mapping Technique from below list
+ 1. Direct Mapping
+ 2. Full Way Mapping
+ 3. N-Way Mapping
+ 4. Two-Level Cache(L1 & L2)
+ 5.Exit
+
+2
+Welcome to the Full-Way Mapping Technique
+
+==================================
+Cache type:    Full-Way Cache
+==================================
+Cache Hits:                 1126647
+Cache Misses:               373353
+Cache Compulsory Misses:    256
+Cache Capacity Misses:      373097
+
+---Total Full-Way Cache performance---
+Total Accesses:   1500000
+Cache Hit rate:   75.1098%
+Cache Miss rate:  24.8902%
+
+Cache Miss rate:   24.8902%
+Cache Compulsory Miss rate:  0.0171%
+Cache Capacity Miss rate:   24.8731%
+
+
+login-20-25:/anvesh/cache$
+login-20-25:/anvesh/cache$ gcc cachesim.c
+login-20-25:/anvesh/cache$
+login-20-25:/anvesh/cache$ ./a.out trace_for_students/trace.hpcg
+Enter the one of the Mapping Technique from below list
+ 1. Direct Mapping
+ 2. Full Way Mapping
+ 3. N-Way Mapping
+ 4. Two-Level Cache(L1 & L2)
+ 5.Exit
+
+2
+Welcome to the Full-Way Mapping Technique
+
+==================================
+Cache type:    Full-Way Cache
+==================================
+Cache Hits:                 1126017
+Cache Misses:               373983
+Cache Compulsory Misses:    1024
+Cache Capacity Misses:      372959
+
+---Total Full-Way Cache performance---
+Total Accesses:   1500000
+Cache Hit rate:   75.0678%
+Cache Miss rate:  24.9322%
+
+Cache Miss rate:   24.9322%
+Cache Compulsory Miss rate:  0.0683%
+Cache Capacity Miss rate:   24.8639%
+
+
+login-20-25:/anvesh/cache$
+login-20-25:/anvesh/cache$
+login-20-25:/anvesh/cache$ gcc cachesim.c
+login-20-25:/anvesh/cache$ ./a.out trace_for_students/trace.hpcg
+Enter the one of the Mapping Technique from below list
+ 1. Direct Mapping
+ 2. Full Way Mapping
+ 3. N-Way Mapping
+ 4. Two-Level Cache(L1 & L2)
+ 5.Exit
+
+2
+Welcome to the Full-Way Mapping Technique
+
+==================================
+Cache type:    Full-Way Cache
+==================================
+Cache Hits:                 1125637
+Cache Misses:               374363
+Cache Compulsory Misses:    2048
+Cache Capacity Misses:      372315
+
+---Total Full-Way Cache performance---
+Total Accesses:   1500000
+Cache Hit rate:   75.0425%
+Cache Miss rate:  24.9575%
+
+Cache Miss rate:   24.9575%
+Cache Compulsory Miss rate:  0.1365%
+Cache Capacity Miss rate:   24.8210%
+
+
+login-20-25:/anvesh/cache$
+

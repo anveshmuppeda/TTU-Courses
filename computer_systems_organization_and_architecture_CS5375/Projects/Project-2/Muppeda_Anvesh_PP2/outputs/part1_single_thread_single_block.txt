@@ -1,0 +1,66 @@
+login-20-25:/PP2/CS5375_GPU_Lecture/Project/mine$ clear
+login-20-25:/PP2/CS5375_GPU_Lecture/Project/mine$ interactive -p gpu-build
+[CPUs=1 NNodes=1 Name=INTERACTIVE Account=default Partition=gpu-build X11=YES]
+
+salloc: Pending job allocation 7810390
+salloc: job 7810390 queued and waiting for resources
+salloc: job 7810390 has been allocated resources
+salloc: Granted job allocation 7810390
+salloc: Waiting for resource configuration
+salloc: Nodes gpu-20-11 are ready for job
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$ ls
+Makefile  matrixMul_cpu.cpp  matrixMul_cpu.exe  matrixMul_gpu_v1.cu  matrixMul_gpu_v1.exe
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$ rm *.exe
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$ ls
+Makefile  matrixMul_cpu.cpp  matrixMul_gpu_v1.cu
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$ make
+g++ matrixMul_cpu.cpp -o matrixMul_cpu.exe
+nvcc matrixMul_gpu_v1.cu -o matrixMul_gpu_v1.exe
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$ ls
+Makefile  matrixMul_cpu.cpp  matrixMul_cpu.exe  matrixMul_gpu_v1.cu  matrixMul_gpu_v1.exe
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$ ./matrixMul_cpu.exe
+Size of matrix (N) is 512 by 512.
+Starting CPU computation
+It took 1198.739333 ms on avg.
+RUN OK.
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$ time nvprof ./matrixMul_gpu_v1.exe
+Size of matrix (N) is 512 by 512.
+==10546== NVPROF is profiling process 10546, command: ./matrixMul_gpu_v1.exe
+Starting unoptimized GPU computation
+It took 9404.063333 ms on avg.
+RUN OK.
+==10546== Profiling application: ./matrixMul_gpu_v1.exe
+==10546== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  37.6983s         4  9.42457s  9.42164s  9.43318s  gpu_Matrix_Multiplication(int, double*, double*, double*)
+      API calls:   99.13%  37.6984s         4  9.42459s  9.42167s  9.43321s  cudaDeviceSynchronize
+                    0.86%  328.72ms         3  109.57ms  10.254us  328.66ms  cudaMallocManaged
+                    0.00%  645.35us         1  645.35us  645.35us  645.35us  cuDeviceTotalMem
+                    0.00%  519.83us         3  173.28us  128.34us  237.85us  cudaFree
+                    0.00%  282.08us         4  70.519us  50.015us  113.10us  cudaLaunchKernel
+                    0.00%  97.566us       101     966ns     121ns  39.077us  cuDeviceGetAttribute
+                    0.00%  19.776us         1  19.776us  19.776us  19.776us  cuDeviceGetName
+                    0.00%  2.3310us         1  2.3310us  2.3310us  2.3310us  cuDeviceGetPCIBusId
+                    0.00%     982ns         3     327ns     182ns     616ns  cuDeviceGetCount
+                    0.00%     700ns         2     350ns     164ns     536ns  cuDeviceGet
+                    0.00%     242ns         1     242ns     242ns     242ns  cuDeviceGetUuid
+
+==10546== Unified Memory profiling result:
+Device "Tesla V100-PCIE-32GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+      36  170.67KB  4.0000KB  0.9961MB  6.000000MB  592.5760us  Host To Device
+      12  170.67KB  4.0000KB  0.9961MB  2.000000MB  169.5360us  Device To Host
+      15         -         -         -           -  1.862304ms  Gpu page fault groups
+Total CPU Page faults: 24
+
+real    0m38.730s
+user    0m31.247s
+sys     0m6.690s
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$
+gpu-20-11:/PP2/CS5375_GPU_Lecture/Project/mine$
